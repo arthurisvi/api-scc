@@ -5,6 +5,7 @@ module.exports = {
     "url": process.env.DATABASE_URL,
     "ssl": { rejectUnauthorized: false },
     "migrations": ["src/database/migrations/*.ts"],
+    "entities": ["src/models/*.ts"],
     "cli": {
         "migrationsDir": "src/database/migrations",
         "entities": "src/model"
