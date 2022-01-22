@@ -1,6 +1,6 @@
-import Time from "../models/Time";
-import { UsuariosRepo } from "../repositories/UsuariosRepo";
-import { sha1 } from 'sha1'
+import { getCustomRepository } from "typeorm" 
+import Time from "../models/Time"
+import { UsuariosRepo } from "../repositories/UsuariosRepo"
 
 interface IUsuarioRepo{
     nome: string 
@@ -12,7 +12,7 @@ interface IUsuarioRepo{
 
 class CriarUsuarioService{
     async execute({ nome, email, senha, n_whatsapp, time} : IUsuarioRepo){
-        const usuariosRepo =  new UsuariosRepo();
+        const usuariosRepo =  getCustomRepository( UsuariosRepo)
 
         if(!email){
             throw new Error ("O campo email é obrigatório.")
@@ -28,7 +28,7 @@ class CriarUsuarioService{
         const usuario = usuariosRepo.create({
             nome,
             email,
-            senha: sha1(senha),
+            senha,
             n_whatsapp,
             time
         })

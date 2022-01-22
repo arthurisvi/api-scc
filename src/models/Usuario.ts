@@ -1,6 +1,7 @@
-import {Entity, PrimaryColumn, Column, CreateDateColumn, OneToOne, JoinColumn} from "typeorm"
+import {Entity, PrimaryColumn, Column, CreateDateColumn, OneToOne, JoinColumn, BeforeInsert, BeforeUpdate } from "typeorm"
 import { v4 as uuid } from "uuid"
 import Time from "./Time"
+import bcrypt from 'bcryptjs'
 
 @Entity("usuarios")
 class Usuario{
@@ -30,6 +31,12 @@ class Usuario{
         if(!this.id){
             this.id = uuid()
         }
+    }
+
+    @BeforeInsert()
+    @BeforeUpdate()
+    criptografarSenha(){
+        this.senha = bcrypt.hashSync(this.senha, 8)
     }
 
 }
