@@ -19,6 +19,16 @@ export class createTableTeams1642824320531 implements MigrationInterface {
                     {
                         name: "escudo",
                         type: "varchar"
+                    },
+                    {
+                        name: "created_at",
+                        type: "timestamp",
+                        default: "now()"
+                    },
+                    {
+                        name: "update_at",
+                        type: "timestamp",
+                        default: "now()"
                     }
                 ]
             })

@@ -29,14 +29,20 @@ export class createTableUsers1642825797528 implements MigrationInterface {
                         type: "varchar"
                     },
                     {
+                        name: "id_time",
+                        type: "uuid"
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
                     },
                     {
-                        name: "id_time",
-                        type: "uuid"
+                        name: "update_at",
+                        type: "timestamp",
+                        default: "now()"
                     }
+                    
 
                 ],
                 foreignKeys:[
