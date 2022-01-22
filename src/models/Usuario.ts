@@ -1,4 +1,4 @@
-import {Entity, PrimaryColumn, Column, CreateDateColumn, OneToOne, JoinColumn, BeforeInsert, BeforeUpdate } from "typeorm"
+import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, OneToOne, JoinColumn, BeforeInsert, BeforeUpdate } from "typeorm"
 import { v4 as uuid } from "uuid"
 import bcrypt from 'bcryptjs'
 
@@ -24,6 +24,9 @@ class Usuario{
     
     @CreateDateColumn()
     created_at: Date
+
+    @UpdateDateColumn()
+    update_at: Date
 
     constructor(){
         if(!this.id){
