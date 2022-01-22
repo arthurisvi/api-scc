@@ -6,6 +6,7 @@ module.exports = {
     "ssl": { rejectUnauthorized: false },
     "migrations": ["src/database/migrations/*.ts"],
     "cli": {
-        "migrationsDir": "src/database/migrations"
+        "migrationsDir": "src/database/migrations",
+        "entities": "src/model"
     }
 }
