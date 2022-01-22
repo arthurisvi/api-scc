@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": false
+                }
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "database-scc",
+            "connectString": "postgres://fvrqmurtzpnnrw:99e162d6cf6cfc99703a5800a45f628996a7b0e9af25adec93781ee872c16772@ec2-3-225-41-234.compute-1.amazonaws.com:5432/dd22gig2o3isvb"
+        }
+    ]
+}

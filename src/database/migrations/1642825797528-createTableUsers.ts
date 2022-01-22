@@ -29,8 +29,8 @@ export class createTableUsers1642825797528 implements MigrationInterface {
                         type: "varchar"
                     },
                     {
-                        name: "id_time",
-                        type: "uuid"
+                        name: "nome_time",
+                        type: "varchar"
                     },
                     {
                         name: "created_at",

@@ -1,5 +1,4 @@
 import { getCustomRepository } from "typeorm" 
-import Time from "../models/Time"
 import { UsuariosRepo } from "../repositories/UsuariosRepo"
 
 interface IUsuarioRepo{
@@ -7,11 +6,11 @@ interface IUsuarioRepo{
     email: string 
     senha: string 
     n_whatsapp: string
-    time?: Time
+    nome_time: string
 }
 
 class CriarUsuarioService{
-    async execute({ nome, email, senha, n_whatsapp, time} : IUsuarioRepo){
+    async execute({ nome, email, senha, n_whatsapp, nome_time} : IUsuarioRepo){
         const usuariosRepo =  getCustomRepository( UsuariosRepo)
 
         if(!email){
@@ -30,7 +29,7 @@ class CriarUsuarioService{
             email,
             senha,
             n_whatsapp,
-            time
+            nome_time
         })
 
         await usuariosRepo.save(usuario)
