@@ -22,8 +22,8 @@ class Usuario{
     
     @CreateDateColumn()
     created_at: Date
-    
-    @OneToOne(type => Time)
+
+    @OneToOne(type => Time, usuario => Usuario)
     @JoinColumn({ name: "id_time"})
     time: Time
 

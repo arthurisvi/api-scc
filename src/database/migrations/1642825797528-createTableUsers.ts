@@ -42,18 +42,6 @@ export class createTableUsers1642825797528 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     }
-                    
-
-                ],
-                foreignKeys:[
-                    {
-                        name: "idTime",
-                        referencedTableName: "times",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["id_time"],
-                        onDelete: "CASCADE",
-                        onUpdate: "CASCADE"
-                    }
                 ]
             })
         )
