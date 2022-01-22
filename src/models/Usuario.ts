@@ -1,6 +1,5 @@
 import {Entity, PrimaryColumn, Column, CreateDateColumn, OneToOne, JoinColumn, BeforeInsert, BeforeUpdate } from "typeorm"
 import { v4 as uuid } from "uuid"
-import Time from "./Time"
 import bcrypt from 'bcryptjs'
 
 @Entity("usuarios")
@@ -19,13 +18,12 @@ class Usuario{
     
     @Column()
     n_whatsapp: string
+
+    @Column()
+    nome_time: string
     
     @CreateDateColumn()
     created_at: Date
-
-    @OneToOne(type => Time, usuario => Usuario)
-    @JoinColumn({ name: "id_time"})
-    time: Time
 
     constructor(){
         if(!this.id){
