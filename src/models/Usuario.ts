@@ -1,6 +1,7 @@
-import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, OneToOne, JoinColumn, BeforeInsert, BeforeUpdate } from "typeorm"
+import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeInsert, BeforeUpdate, OneToMany } from "typeorm"
 import { v4 as uuid } from "uuid"
 import bcrypt from 'bcryptjs'
+import { Escalacao } from "./Escalacao"
 
 @Entity("usuarios")
 class Usuario{
@@ -21,7 +22,10 @@ class Usuario{
 
     @Column()
     nome_time: string
-    
+
+    @OneToMany(() => Escalacao, escalacao => escalacao.usuario)
+    escalacoes: Escalacao[]
+
     @CreateDateColumn()
     created_at: Date
 
