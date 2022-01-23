@@ -8,8 +8,8 @@ class Escalacao{
     @PrimaryColumn()
     readonly id: string
 
-    @Column()
-    jogadores: string
+    @Column("text", {array: true})
+    jogadores: string[]
     
     @Column()
     rodada: number
