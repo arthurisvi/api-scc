@@ -37,6 +37,7 @@ export class createTableEscalacao1642886648345 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("escalacoes")
     }
 
 }
