@@ -5,23 +5,22 @@ import { EscalacoesRepo } from "../repositories/EscalacoesRepo";
 interface IEscalacaoService{
     jogadores: string []
     rodada: number
-    // usuario: Usuario
+    usuario_id: string
 }
 
 class CriarEscalacaoService{
-    async execute({jogadores, rodada/*, usuario*/}: IEscalacaoService){
+    async execute({jogadores, rodada, usuario_id}: IEscalacaoService){
         const escalacoesRepo = getCustomRepository (EscalacoesRepo)
+        
 
-        console.log(jogadores)
-        console.log(rodada)
         if (!jogadores){
             throw new Error("Algo de errado ocorreu na escalação!")
         }
-
+ 
         const escalacao = escalacoesRepo.create({
             jogadores,
-            rodada
-            // usuario
+            rodada,
+            usuario_id
         })
 
         await escalacoesRepo.save(escalacao)

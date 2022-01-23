@@ -14,6 +14,10 @@ class Escalacao{
     @Column()
     rodada: number
 
+    @Column()
+    usuario_id: string
+
+    @JoinColumn({name: "usuario_id"})
     @ManyToOne(type => Usuario, escalacoes => Escalacao)
     usuario: Usuario
 

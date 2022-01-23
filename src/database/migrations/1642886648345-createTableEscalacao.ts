@@ -12,6 +12,10 @@ export class createTableEscalacao1642886648345 implements MigrationInterface {
                     type: "uuid",
                     isPrimary: true
                 },
+                {
+                    name: "usuario_id",
+                    type: "uuid",
+                },
                 {  
                     name: "jogadores",
                     type: "text"
@@ -30,7 +34,17 @@ export class createTableEscalacao1642886648345 implements MigrationInterface {
                     type: "timestamp",
                     default: "now()"
                 }
-            
+            ],
+
+            foreignKeys:[
+                {
+                    name: "FKUsuarioEscalacao",
+                    referencedTableName: "usuarios",
+                    referencedColumnNames: ["id"],
+                    columnNames: ["usuario_id"],
+                    onDelete: "SET NULL",
+                    onUpdate: "SET NULL"
+                }
             ]
             })
         )
