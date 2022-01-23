@@ -23,7 +23,7 @@ class Usuario{
     @Column()
     nome_time: string
 
-    @OneToMany(() => Escalacao, escalacao => escalacao.usuario)
+    @OneToMany(() => Escalacao, usuario => Usuario)
     escalacoes: Escalacao[]
 
     @CreateDateColumn()
