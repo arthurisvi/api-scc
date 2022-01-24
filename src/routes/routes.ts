@@ -8,5 +8,6 @@ const routes = Router()
 routes.use('/usuarios', usuarioRouter)
 routes.use('/escalacoes', escalacaoRouter)
 routes.use('/login', loginRouter)
+routes.use('/usuario/escalacoes', escalacaoRouter)
 
 export { routes }

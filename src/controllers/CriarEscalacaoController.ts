@@ -5,9 +5,14 @@ class CriarEscalacaoController{
 
     async handle(req: Request, res: Response){
         const criarEscalacaoService = new CriarEscalacaoService()
-        const {jogadores, rodada, usuario_id} = req.body
+        const {jogadores, rodada} = req.body
+        const { usuario_id } = req
 
-        const escalacao = await criarEscalacaoService.execute({ jogadores, rodada, usuario_id })
+        const escalacao = await criarEscalacaoService.execute({ 
+            jogadores, 
+            rodada, 
+            usuario_id: usuario_id
+        })
 
         return res.json(escalacao)
     }
