@@ -11,7 +11,7 @@ class CriarEscalacaoController{
         const escalacao = await criarEscalacaoService.execute({ 
             jogadores, 
             rodada, 
-            usuario_id: usuario_id
+            usuario_id
         })
 
         return res.json(escalacao)

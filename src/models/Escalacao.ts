@@ -9,7 +9,7 @@ class Escalacao{
     readonly id: string
 
     @Column("text", {array: true})
-    jogadores: string[]
+    jogadores: Array<number>
     
     @Column()
     rodada: number
